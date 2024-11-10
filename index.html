@@ -1,0 +1,111 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Reyes Cell</title>  
+    <style>  
+        body {  
+            background: linear-gradient(to right, #bdd8f1, #2e0140); /* Degradado de fondo */  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+        }  
+        h1 {  
+            color: #0f0f0f;  
+        }  
+        .gallery {  
+            display: grid;  
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  
+            gap: 10px;  
+            padding: 20px;  
+        }  
+        .gallery img {  
+            width: 100%;  
+            height: auto;  
+            border-radius: 8px;  
+            cursor: pointer; /* Cambia el cursor para indicar que se puede hacer clic */  
+        }  
+        .modal {  
+            display: none; /* Oculto por defecto */  
+            position: fixed; /* Fijo en la pantalla */  
+            z-index: 1000; /* Por encima de otros elementos */  
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */ 
+        } 
+        .modal img {   
+            margin: auto;   
+            display: block;   
+            width: auto;   
+            height: 80%;   
+        }   
+        .close {   
+            position: absolute;   
+            top: 20px;   
+            right: 30px;   
+            color: rgb(224, 231, 224);   
+            font-size: 40px;   
+            font-weight: bold;   
+            cursor: pointer;   
+        }    
+    </style>  
+</head>  
+<body>  
+    <h1>Reyes Cell</h1>
+    <h1>Promoción De Nuestros Productos</h1>  
+  
+    <div class="gallery">  
+        <img src="abc.jpg" alt="Producto 1" onclick="showImage(this.src)">  
+        <img src="dfg.jpg" alt="Producto 2" onclick="showImage(this.src)">  
+        <img src="hij.jpg" alt="Producto 3" onclick="showImage(this.src)">  
+        <img src="kmn.jpg" alt="Producto 4" onclick="showImage(this.src)">
+        <img src="lop.jpg" alt="Producto 5" onclick="showImage(this.src)">
+        <img src="qrs.jpg" alt="Producto 6" onclick="showImage(this.src)">
+        <img src="tuv.jpg" alt="Producto 7" onclick="showImage(this.src)">
+        <img src="wqy.jpg" alt="Producto 8" onclick="showImage(this.src)">
+        <img src="z.jpg" alt="Producto 9" onclick="showImage(this.src)">
+        <img src="123.jpg" alt="Producto 10" onclick="showImage(this.src)">
+        <img src="456.jpg" alt="Producto 11" onclick="showImage(this.src)">
+        <img src="789.jpg" alt="Producto 12" onclick="showImage(this.src)">
+        <img src="10.jpg" alt="Producto 13" onclick="showImage(this.src)">
+        <img src="11.jpg" alt="Producto 14" onclick="showImage(this.src)">  
+        <!-- Agrega más imágenes hasta llegar a 40 -->  
+    </div>  
+  
+    <div class="modal" id="modal">   
+        <span class="close" onclick="closeModal()">&times;</span>   
+        <img id="modalImg" src="">    
+    </div>  
+  
+    <div class="contact">  
+        <h2>Contáctanos por WhatsApp</h2>  
+        <a href="https://wa.me/584247616565" target="_blank">Enviar Mensaje</a>  
+    </div>
+
+    <script>
+        function showImage(src) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modalImg");
+            
+            modal.style.display = "block"; // Muestra el modal
+            modalImg.src = src; // Establece la fuente de la imagen en el modal
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            
+            modal.style.display = "none"; // Oculta el modal
+        }
+        
+        // Cierra el modal cuando se hace clic fuera de la imagen
+        window.onclick = function(event) {
+          const modal = document.getElementById("modal");
+          if (event.target == modal) {
+              closeModal();
+          }
+      }
+    </script>
+</body>  
+</html>
